@@ -19,19 +19,19 @@ Project ini dibuat untuk memenuhi tugas UAS: mengimplementasikan 2 studi kasus a
 Lokasi kode utama ada di:
 
 `src/main/java/org/example/minidictionaryapp/`
-`org.example.minidictionaryapp/`
-`app/`
-`MiniDictionaryApp.java`
-`model/`
-`DictionaryBST.java`
-`ui/`
-`AddView.java`
-`AppView.java`
-`SearchView.java`
-`TodoView.java`
-`UpdateView.java`
-`util/`
-`AppLogger.java`
+org.example.minidictionaryapp/
+app/
+MiniDictionaryApp.java
+model/
+DictionaryBST.java
+ui/
+AddView.java
+AppView.java
+SearchView.java
+TodoView.java
+UpdateView.java
+util/
+AppLogger.java
 
 
 ---
