@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.example.minidictionaryapp.ui.AppView;
 
+//main app
 public class MiniDictionaryApp extends Application {
 
     @Override
