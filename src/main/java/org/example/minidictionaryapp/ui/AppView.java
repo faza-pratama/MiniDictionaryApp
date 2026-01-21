@@ -26,7 +26,7 @@ public class AppView extends BorderPane {
         tabs.getTabs().add(new Tab("1) Tambah Kata", new AddView(bst, logger)));
         tabs.getTabs().add(new Tab("2) Cari Kata", new SearchView(bst, logger)));
         tabs.getTabs().add(new Tab("3) Update Arti", new UpdateView(bst, logger)));
-        tabs.getTabs().add(new Tab("4) Delete (TODO)", new TodoView("Fitur 4 (Delete) belum dibuat.\nKelompok lain bisa implement di DictionaryBST.delete().")));
+        tabs.getTabs().add(new Tab("4) Delete Kata", new DeleteView(bst, logger)));
         tabs.getTabs().add(new Tab("5) Traversal (TODO)", new TodoView("Fitur 5 (Traversal) belum dibuat.\nKelompok lain bisa implement inorder/preorder/postorder di DictionaryBST.")));
 
         // Biar tab tidak bisa ditutup

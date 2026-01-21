@@ -82,12 +82,40 @@ public class DictionaryBST {
         return false;
     }
 
-    // TODO: Feature 4 (Delete)
-    /*
+    // Feature 4: Delete
     public boolean delete(String wordRaw) {
-        return false;
+        String word = normalize(wordRaw);
+        if (word.isEmpty() || search(word) == null) return false;
+        root = deleteRecursive(root, word);
+        return true;
     }
-    */
+
+    private Node deleteRecursive(Node current, String word) {
+        if (current == null) return null;
+
+        int cmp = word.compareTo(current.word);
+        if (cmp < 0) {
+            current.left = deleteRecursive(current.left, word);
+        } else if (cmp > 0) {
+            current.right = deleteRecursive(current.right, word);
+        } else {
+            // Kasus 1 & 2: Leaf atau 1 Anak
+            if (current.left == null) return current.right;
+            if (current.right == null) return current.left;
+
+            // Kasus 3: 2 Anak (Cari Successor: Terkecil di kanan)
+            Node successor = findMin(current.right);
+            current.word = successor.word;
+            current.meaning = successor.meaning;
+            current.right = deleteRecursive(current.right, successor.word);
+        }
+        return current;
+    }
+
+    private Node findMin(Node node) {
+        while (node.left != null) node = node.left;
+        return node;
+    }
 
     // TODO: Feature 5 (Traversal)
     /*
