@@ -123,4 +123,46 @@ public class DictionaryBST {
     public String preorderList() { return ""; }
     public String postorderList() { return ""; }
     */
+    // Feature 5: Traversal
+    public String inorderList() {
+        StringBuilder sb = new StringBuilder();
+        inorderRecursive(root, sb);
+        return sb.length() == 0 ? "Kamus Kosong." : sb.toString();
+    }
+
+    private void inorderRecursive(Node node, StringBuilder sb) {
+        if (node != null) {
+            inorderRecursive(node.left, sb);
+            sb.append("• ").append(node.word).append(": ").append(node.meaning).append("\n");
+            inorderRecursive(node.right, sb);
+        }
+    }
+
+    public String preorderList() {
+        StringBuilder sb = new StringBuilder();
+        preorderRecursive(root, sb);
+        return sb.length() == 0 ? "Kamus Kosong." : sb.toString();
+    }
+
+    private void preorderRecursive(Node node, StringBuilder sb) {
+        if (node != null) {
+            sb.append("[").append(node.word).append("] ");
+            preorderRecursive(node.left, sb);
+            preorderRecursive(node.right, sb);
+        }
+    }
+
+    public String postorderList() {
+        StringBuilder sb = new StringBuilder();
+        postorderRecursive(root, sb);
+        return sb.length() == 0 ? "Kamus Kosong." : sb.toString();
+    }
+
+    private void postorderRecursive(Node node, StringBuilder sb) {
+        if (node != null) {
+            postorderRecursive(node.left, sb);
+            postorderRecursive(node.right, sb);
+            sb.append(node.word).append(" ");
+        }
+    }
 }
